@@ -1,6 +1,6 @@
 {
   "name": "d3-nelson-rules",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "d3 utility to apply nelsons rules of process control to a set of data",
   "keywords": [
     "d3"
