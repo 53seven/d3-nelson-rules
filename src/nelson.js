@@ -10,6 +10,7 @@ import {rule_5, rule_5_size} from './rules/rule_5.js';
 import {rule_6, rule_6_size} from './rules/rule_6.js';
 import {rule_7, rule_7_size} from './rules/rule_7.js';
 import {rule_8, rule_8_size} from './rules/rule_8.js';
+import window_arr from './window_arr.js';
 
 var rule_array = [
   {rule: rule_1, size: rule_1_size},
@@ -27,21 +28,34 @@ function nelson() {
   var mean, std, get_value;
 
   function rule_checker(selection) {
+    console.log('start of fn', selection);
     // collect the values and the elements that we are operating on
     // (since we need memory to do our rule processing)
-    var elems = selection.map(function(d, i) {
+    var elems = [];
+    selection.each(function(d, i) {
       var value = (typeof(get_value) === 'function' ? get_value(d) : get_value);
       var element = d3.select(this);
-      return {
+      elems.push({
         el: element,
         val: value
-      };
+      });
     });
+
+    // check to see if we need to calc mean + std
+    if (!mean) {
+      mean = d3.mean(elems, function(d) { return d.val; });
+      console.log('mean', mean);
+    }
+    if (!std) {
+      std = d3.deviation(elems, function(d) { return d.val; });
+      console.log('std', std);
+    }
 
     // alright, now that we have our data + elements lets apply each rule
     // to the necessary window sizes
-    rule_array.forEach(function(rule_elem) {
+    rule_array.forEach(function(rule_elem, i) {
       var windows = window_arr(elems, rule_elem.size);
+      console.log('rule', i, 'on elem count', windows.length);
       windows.forEach(function(wind) {
         rule_elem.rule(wind, mean, std);
       });
@@ -67,7 +81,7 @@ function nelson() {
 
   rule_checker.value = function(val) {
     if (!arguments.length) {
-      return std;
+      return get_value;
     }
     get_value = val;
     return rule_checker;
@@ -81,25 +95,7 @@ function nelson() {
   rule_checker.rule_6 = rule_6;
   rule_checker.rule_7 = rule_7;
   rule_checker.rule_8 = rule_8;
+  rule_checker.window_arr = window_arr;
 
   return rule_checker;
-}
-
-// Takes an array and returns an array of windows of given size
-// elements are NOT cloned from window to window
-// if the array.length < size, an empty array is returned
-function window_arr(array, size) {
-  var out = [];
-  array.every(function(val, i, arr) {
-    var wind = [];
-    for (var j = i; j < size; j++) {
-      if (j >= arr.length) {
-        // return false to break out of the array iteration
-        return false;
-      }
-      wind.push(arr[j]);
-    }
-    out.push(wind);
-  });
-  return out;
 }
