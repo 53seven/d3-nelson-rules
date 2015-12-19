@@ -4,7 +4,7 @@ d3 utility to apply [nelsons rules](https://en.wikipedia.org/wiki/Nelson_rules) 
 
 ## Installing
 
-If you use NPM, `npm install d3-nelson-rules`. Otherwise, download the [latest release](https://github.com/d3/d3-nelson-rules/releases/latest).
+If you use NPM, `npm install d3-nelson-rules`. Otherwise, download the [latest release](https://github.com/kiernanmcgowan/d3-nelson-rules/releases/latest).
 
 ## API Reference
 
