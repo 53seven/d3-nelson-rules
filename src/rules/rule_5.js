@@ -27,7 +27,7 @@ export function rule_5(data, mean, std) {
   if (count >= 2 && same_side) {
     data.forEach(function(d) {
       if (Math.abs(d.val - mean) >= 2 * std) {
-        d.el = mark(d.el, 'rule_5');
+        d = mark(d, 'rule_5');
       }
     });
   }

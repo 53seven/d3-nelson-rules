@@ -10,12 +10,13 @@ function sample(vals) {
 }
 module.exports.sample = sample;
 
-function marked(el, rule) {
-  return el.hasClass('marked') && el.hasClass(rule);
+function marked(data, rule) {
+  // in the testing environemnt the keys are strings for some reason (cheerio vs d3 differences).
+  return data.el.attr('marked') === 'true' && data.el.attr(rule) === 'true';
 }
 module.exports.marked = marked;
 
-function notMarked(el, rule) {
-  return !(el.hasClass('marked') || el.hasClass(rule));
+function notMarked(data, rule) {
+  return data.el.attr('marked') !== 'true' && data.el.attr(rule) !== 'true';
 }
 module.exports.notMarked = notMarked;

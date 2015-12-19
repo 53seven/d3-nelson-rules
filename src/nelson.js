@@ -28,7 +28,6 @@ function nelson() {
   var mean, std, get_value;
 
   function rule_checker(selection) {
-    console.log('start of fn', selection);
     // collect the values and the elements that we are operating on
     // (since we need memory to do our rule processing)
     var elems = [];
@@ -44,18 +43,15 @@ function nelson() {
     // check to see if we need to calc mean + std
     if (!mean) {
       mean = d3.mean(elems, function(d) { return d.val; });
-      console.log('mean', mean);
     }
     if (!std) {
       std = d3.deviation(elems, function(d) { return d.val; });
-      console.log('std', std);
     }
 
     // alright, now that we have our data + elements lets apply each rule
     // to the necessary window sizes
     rule_array.forEach(function(rule_elem, i) {
       var windows = window_arr(elems, rule_elem.size);
-      console.log('rule', i, 'on elem count', windows.length);
       windows.forEach(function(wind) {
         rule_elem.rule(wind, mean, std);
       });

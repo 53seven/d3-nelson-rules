@@ -13,15 +13,15 @@ var result = input.map(function(i) {
 });
 
 tape('rule_1 marks appropriate points', function(test) {
-  test.ok(utils.marked(result[0].el, 'rule_1'), 'Positive val');
-  test.ok(utils.marked(result[1].el, 'rule_1'), 'Negative val');
+  test.ok(utils.marked(result[0], 'rule_1'), 'Positive val');
+  test.ok(utils.marked(result[1], 'rule_1'), 'Negative val');
 
   test.end();
 });
 
 tape('rule_1 marks ignores other points', function(test) {
-  test.ok(utils.notMarked(result[2].el, 'rule_1'), 'Positive val');
-  test.ok(utils.notMarked(result[3].el, 'rule_1'), 'Negative val');
+  test.ok(utils.notMarked(result[2], 'rule_1'), 'Positive val');
+  test.ok(utils.notMarked(result[3], 'rule_1'), 'Negative val');
 
   test.end();
 });

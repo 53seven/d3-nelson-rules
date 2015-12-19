@@ -23,7 +23,7 @@ export function rule_2(data, mean, std) {
   // if so, mark the points
   if (res) {
     data.forEach(function(d) {
-      d.el = mark(d.el, 'rule_2');
+      d = mark(d, 'rule_2');
     });
   }
 

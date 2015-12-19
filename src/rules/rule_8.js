@@ -13,7 +13,7 @@ export function rule_8(data, mean, std) {
 
   if (res) {
     data.forEach(function(d) {
-      d.el = mark(d.el, 'rule_8');
+      d = mark(d, 'rule_8');
     });
   }
 

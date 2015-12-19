@@ -12,7 +12,7 @@ var input_no_match = utils.sample([0, 1, 0, 1, 1, 2, 1, 1, 0, 1, 0, 1, 0, 1, 0])
 tape('rule_7 marks low values', function(test) {
   var result = rule_7(input_pos_match, mean, std);
   result.forEach(function(res, i) {
-    test.ok(utils.marked(res.el, 'rule_7'), 'el ' + i + ' is marked');
+    test.ok(utils.marked(res, 'rule_7'), 'el ' + i + ' is marked');
   });
   test.end();
 });
@@ -20,7 +20,7 @@ tape('rule_7 marks low values', function(test) {
 tape('rule_7 does not mark higher values', function(test) {
   var result = rule_7(input_no_match, mean, std);
   result.forEach(function(res, i) {
-    test.ok(utils.notMarked(res.el, 'rule_7'), 'el ' + i + ' is not marked');
+    test.ok(utils.notMarked(res, 'rule_7'), 'el ' + i + ' is not marked');
   });
 
   test.end();

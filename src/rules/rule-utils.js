@@ -1,8 +1,8 @@
 // rule-utils.js
 // utils for the rules
 
-export default function mark(el, rule) {
-  el.classed('marked', true);
-  el.classed(rule, true);
-  return el;
+export default function mark(data, rule) {
+  data.el.attr('marked', true);
+  data.el.attr(rule, true);
+  return data;
 }

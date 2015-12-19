@@ -36,7 +36,7 @@ export function rule_4(data, mean, std) {
   // if so, mark the points
   if (res) {
     data.forEach(function(d) {
-      d.el = mark(d.el, 'rule_4');
+      d = mark(d, 'rule_4');
     });
   }
 
