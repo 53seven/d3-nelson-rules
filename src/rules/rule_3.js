@@ -9,12 +9,12 @@ export function rule_3(data, mean, std) {
   var diff = (data[1] - data[0]);
   if (diff === 0) {
     // no trend
-    return data;
+    return false;
   }
   var up = diff > 0;
 
   var res = data.every(function(d, i, arr) {
-    if (arr[i + 1]) {
+    if ((i + 1) < arr.length) {
       if (up && (d > arr[i + 1])) {
         // trending up, but current val is greater than next
         return false;

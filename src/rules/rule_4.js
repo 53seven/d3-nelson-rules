@@ -16,7 +16,7 @@ export function rule_4(data, mean, std) {
         return false;
       }
       dir = diff > 0;
-    } else if (arr[i + 1]) {
+    } else if ((i + 1) < arr.length) {
       diff = (d - arr[i + 1]);
       if (diff === 0) {
         return false;

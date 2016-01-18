@@ -25,10 +25,10 @@ tape('rule_3 marks decreasing trends', function(test) {
 
 tape('rule_3 does not mark no trend', function(test) {
   var resultNoise = rule_3(input_no_match_noise, mean, std);
-  test.notOk(resultNoise);
+  test.notOk(resultNoise, 'noisy trend');
 
   var resultFlat = rule_3(input_no_match_flat, mean, std);
-  test.notOk(resultFlat);
+  test.notOk(resultFlat, 'flat trend');
 
   test.end();
 });
