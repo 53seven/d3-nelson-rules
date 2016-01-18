@@ -6,7 +6,7 @@ export {window_size as rule_3_size};
 
 export function rule_3(data, mean, std) {
   // figure out trend direction
-  var diff = (data[1].val - data[0].val);
+  var diff = (data[1] - data[0]);
   if (diff === 0) {
     // no trend
     return data;
@@ -15,10 +15,10 @@ export function rule_3(data, mean, std) {
 
   var res = data.every(function(d, i, arr) {
     if (arr[i + 1]) {
-      if (up && (d.val > arr[i + 1].val)) {
+      if (up && (d > arr[i + 1])) {
         // trending up, but current val is greater than next
         return false;
-      } else if (!up && (d.val < arr[i + 1].val)) {
+      } else if (!up && (d < arr[i + 1])) {
         // trending down, but current val is less than next
         return false;
       }

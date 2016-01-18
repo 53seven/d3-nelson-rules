@@ -11,13 +11,13 @@ export function rule_4(data, mean, std) {
   var res = data.every(function(d, i, arr) {
     if (i === 0) {
       // set the initial direction
-      diff = (d.val - arr[i + 1].val);
+      diff = (d - arr[i + 1]);
       if (diff === 0) {
         return false;
       }
       dir = diff > 0;
     } else if (arr[i + 1]) {
-      diff = (d.val - arr[i + 1].val);
+      diff = (d - arr[i + 1]);
       if (diff === 0) {
         return false;
       }

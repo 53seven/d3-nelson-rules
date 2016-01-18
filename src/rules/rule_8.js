@@ -7,7 +7,7 @@ export {window_size as rule_8_size};
 
 export function rule_8(data, mean, std) {
   var res = data.every(function(d) {
-    return (Math.abs(d.val - mean) >= std);
+    return (Math.abs(d - mean) >= std);
   });
 
   return res;

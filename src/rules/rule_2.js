@@ -9,11 +9,11 @@ export function rule_2(data, mean, std) {
   // make sure all points are on the same side of the mean
   var res = data.every(function(d, i) {
     if (i === 0) {
-      positive_side = (d.val - mean) > 0 && (d.val - mean) !== 0;
+      positive_side = (d - mean) > 0 && (d - mean) !== 0;
     }
-    if (positive_side && (d.val - mean) <= 0) {
+    if (positive_side && (d - mean) <= 0) {
       return false;
-    } else if (!positive_side && (d.val - mean) >= 0) {
+    } else if (!positive_side && (d - mean) >= 0) {
       return false;
     }
     return true;

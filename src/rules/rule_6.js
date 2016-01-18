@@ -8,13 +8,13 @@ export {window_size as rule_6_size};
 export function rule_6(data, mean, std) {
   var count = 0, dir, sign = [];
   data.forEach(function(d, i) {
-    if (Math.abs(d.val - mean) >= std) {
+    if (Math.abs(d - mean) >= std) {
       count++;
       // no need to zero check this one
       if (typeof dir === 'undefined') {
-        dir = (d.val - mean) > 0;
+        dir = (d - mean) > 0;
       }
-      var this_sign = (dir === ((d.val - mean) > 0));
+      var this_sign = (dir === ((d - mean) > 0));
       sign.push(this_sign);
     }
   });
