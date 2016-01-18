@@ -1,5 +1,7 @@
 # d3-nelson-rules
 
+[![build status](https://travis-ci.org/kiernanmcgowan/d3-nelson-rules.svg)](https://travis-ci.org/kiernanmcgowan/d3-nelson-rules)
+
 d3 utility to apply [nelsons rules](https://en.wikipedia.org/wiki/Nelson_rules) of process control to a set of data.
 
 ## Installing
