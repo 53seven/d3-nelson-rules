@@ -6,22 +6,24 @@ var tape = require('tape-catch'),
 var std = 1,
     mean = 0;
 
-var input = utils.sample([3, -3, 2, -2]);
+var input = [3, -3, 2, -2];
 
 var result = input.map(function(i) {
   return rule_1(i, mean, std);
 });
 
+console.log(result)
+
 tape('rule_1 marks appropriate points', function(test) {
-  test.ok(utils.marked(result[0], 'rule_1'), 'Positive val');
-  test.ok(utils.marked(result[1], 'rule_1'), 'Negative val');
+  test.ok(result[0], 'Positive val');
+  test.ok(result[1], 'Negative val');
 
   test.end();
 });
 
 tape('rule_1 marks ignores other points', function(test) {
-  test.ok(utils.notMarked(result[2], 'rule_1'), 'Positive val');
-  test.ok(utils.notMarked(result[3], 'rule_1'), 'Negative val');
+  test.notOk(result[2], 'Positive val');
+  test.notOk(result[3], 'Negative val');
 
   test.end();
 });

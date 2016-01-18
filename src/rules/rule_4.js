@@ -2,7 +2,6 @@
 // Fourteen (or more) points in a row alternate in direction,
 // increasing then decreasing.
 var window_size = 14;
-import mark from './rule-utils';
 
 export {window_size as rule_4_size};
 
@@ -33,12 +32,5 @@ export function rule_4(data, mean, std) {
     return true;
   });
 
-  // if so, mark the points
-  if (res) {
-    data.forEach(function(d) {
-      d = mark(d, 'rule_4');
-    });
-  }
-
-  return data;
+  return res;
 }

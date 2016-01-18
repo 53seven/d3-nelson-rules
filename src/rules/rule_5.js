@@ -2,7 +2,6 @@
 // Two (or three) out of three points in a row are more than 2 standard
 // deviations from the mean in the same direction.
 var window_size = 3;
-import mark from './rule-utils';
 
 export {window_size as rule_5_size};
 
@@ -24,13 +23,5 @@ export function rule_5(data, mean, std) {
     return (d === sign[0]);
   });
 
-  if (count >= 2 && same_side) {
-    data.forEach(function(d) {
-      if (Math.abs(d.val - mean) >= 2 * std) {
-        d = mark(d, 'rule_5');
-      }
-    });
-  }
-
-  return data;
+  return (count >= 2 && same_side);
 }

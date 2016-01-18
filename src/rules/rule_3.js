@@ -1,7 +1,6 @@
 // rule_3.js
 // Six (or more) points in a row are continually increasing (or decreasing).
 var window_size = 6;
-import mark from './rule-utils';
 
 export {window_size as rule_3_size};
 
@@ -29,12 +28,5 @@ export function rule_3(data, mean, std) {
     return true;
   });
 
-  // if so, mark the points
-  if (res) {
-    data.forEach(function(d) {
-      d = mark(d, 'rule_3');
-    });
-  }
-
-  return data;
+  return res;
 }
