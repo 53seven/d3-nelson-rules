@@ -1,12 +1,12 @@
 # d3-nelson-rules
 
-[![build status](https://travis-ci.org/kiernanmcgowan/d3-nelson-rules.svg)](https://travis-ci.org/kiernanmcgowan/d3-nelson-rules)
+[![build status](https://travis-ci.org/53seven/d3-nelson-rules.svg)](https://travis-ci.org/53seven/d3-nelson-rules)
 
 d3 utility to apply [nelsons rules](https://en.wikipedia.org/wiki/Nelson_rules) of process control to a set of data.
 
 ## Installing
 
-If you use NPM, `npm install d3-nelson-rules`. Otherwise, download the [latest release](https://github.com/kiernanmcgowan/d3-nelson-rules/releases/latest).
+If you use NPM, `npm install d3-nelson-rules`. Otherwise, download the [latest release](https://github.com/53seven/d3-nelson-rules/releases/latest).
 
 ## API Reference
 
