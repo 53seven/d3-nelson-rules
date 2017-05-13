@@ -1,5 +1,7 @@
 # d3-nelson-rules
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/53seven/d3-nelson-rules.svg)](https://greenkeeper.io/)
+
 [![build status](https://travis-ci.org/53seven/d3-nelson-rules.svg)](https://travis-ci.org/53seven/d3-nelson-rules)
 
 d3 utility to apply [nelsons rules](https://en.wikipedia.org/wiki/Nelson_rules) of process control to a set of data.
