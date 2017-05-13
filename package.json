@@ -24,7 +24,7 @@
     "faucet": "0.0",
     "lodash": "^4.17.4",
     "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-npm": "^2.0.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
     "rollup": "0.41.6",
     "tape": "4",
     "tape-catch": "^1.0.4",
