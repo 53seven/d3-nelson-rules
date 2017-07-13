@@ -20,7 +20,7 @@
     "prepublish": "npm run test && uglifyjs build/d3-nelson-rules.js -c -m -o build/d3-nelson-rules.min.js && rm -f build/d3-nelson-rules.zip && zip -j build/d3-nelson-rules.zip -- LICENSE README.md build/d3-nelson-rules.js build/d3-nelson-rules.min.js"
   },
   "devDependencies": {
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0-rc.2",
     "faucet": "0.0",
     "lodash": "^4.17.4",
     "rollup-plugin-commonjs": "^8.0.2",
