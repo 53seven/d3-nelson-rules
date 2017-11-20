@@ -16,7 +16,7 @@
   "scripts": {
     "pretest": "npm run build",
     "test": "faucet `find test -name '*-test.js'`",
-    "build": "mkdir -p build && node -e 'process.stdout.write(\"var version = \\\"\" + require(\"./package.json\").version + \"\\\"; export * from \\\"../index\\\"; export {version};\");' > build/bundle.js && rollup -c rollup.config.js -f umd -u d3-nelson-rules -n d3_nelson_rules -o build/d3-nelson-rules.js -- build/bundle.js",
+    "build": "mkdir -p build && node -e 'process.stdout.write(\"var version = \\\"\" + require(\"./package.json\").version + \"\\\"; export * from \\\"../index\\\"; export {version};\");' > build/bundle.js && rollup -c rollup.config.js -f umd --amd.id d3-nelson-rules -n d3_nelson_rules -o build/d3-nelson-rules.js -- build/bundle.js",
     "prepublish": "npm run test && uglifyjs build/d3-nelson-rules.js -c -m -o build/d3-nelson-rules.min.js && rm -f build/d3-nelson-rules.zip && zip -j build/d3-nelson-rules.zip -- LICENSE README.md build/d3-nelson-rules.js build/d3-nelson-rules.min.js"
   },
   "devDependencies": {
@@ -25,7 +25,7 @@
     "lodash": "^4.17.4",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup": "0.43.1",
+    "rollup": "0.51.8",
     "tape": "4",
     "tape-catch": "^1.0.4",
     "uglify-js": "^3.0.5"
