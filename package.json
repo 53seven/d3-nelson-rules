@@ -23,7 +23,7 @@
     "cheerio": "^1.0.0-rc.2",
     "faucet": "0.0",
     "lodash": "^4.17.4",
-    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup": "0.56.2",
     "tape": "4",
